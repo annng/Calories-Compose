@@ -1,6 +1,7 @@
-package com.annng.caloriestracker.feature.presentation.product.component
+package com.annng.caloriestracker.feature.presentation.product.list.component
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
@@ -15,8 +16,10 @@ import com.annng.caloriestracker.ui.theme.Grey600
 import com.annng.caloriestracker.ui.theme.Yellow400
 
 @Composable
-fun TabItem(isSelected : Boolean, item : CategoryItem){
-    Column(Modifier.padding(horizontal = 8.dp)) {
+fun TabItem(isSelected : Boolean, item : CategoryItem, onSelect : (String) -> Unit){
+    Column(Modifier.padding(horizontal = 8.dp).clickable {
+        onSelect(item.title)
+    }) {
         Text(text = item.title, style = MaterialTheme.typography.body1,
             color = if (isSelected) Color.Black else Grey400)
         Spacer(modifier = Modifier.height(8.dp))

@@ -82,7 +82,7 @@ fun CategoriesScreen(
                 items(viewModel.categoriesItems) {
                     CategoriesItem(item = it){
                         navController.navigate(Screen.Product.route){
-                            popUpTo(Screen.Home.route)
+
                         }
                     }
                 }

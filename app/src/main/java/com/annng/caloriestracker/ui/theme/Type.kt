@@ -143,5 +143,6 @@ val LightTypography = Typography(
         fontWeight = FontWeight.Light,
         color = Grey600,
         fontSize = 13.sp,
+        lineHeight = 16.sp
     )
 )

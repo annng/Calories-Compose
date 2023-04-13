@@ -1,18 +1,17 @@
 package com.annng.caloriestracker.feature.presentation.home
 
-import androidx.compose.foundation.layout.Column
+import androidx.compose.animation.Crossfade
 import androidx.compose.material.Scaffold
-import androidx.compose.material.TopAppBar
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.annng.caloriestracker.common.Screen
+import com.annng.caloriestracker.feature.presentation.categories.CategoriesScreen
 import com.annng.caloriestracker.feature.presentation.home.component.DrawerNavigationMenu
-import com.annng.caloriestracker.feature.presentation.home.component.NavHost
 import com.annng.caloriestracker.ui.widget.AppBarHome
+import com.annng.caloriestracker.ui.widget.systemUIBar
 import kotlinx.coroutines.launch
 
 @Composable
@@ -23,6 +22,8 @@ fun HomeScreen(
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
     val navHostController = rememberNavController()
+
+    systemUIBar()
     Scaffold(
         scaffoldState = scaffoldState,
         topBar = {
@@ -34,15 +35,14 @@ fun HomeScreen(
         },
         drawerContent = {
             DrawerNavigationMenu(viewModel.drawerItems, scaffoldState, scope){
-//                navHostController.navigate(it.title.lowercase()) {
-//                    navHostController.graph.startDestinationId
-//                    launchSingleTop = true
-//                    restoreState = true
-//                }
-                navController.navigate(Screen.Product.route)
+                viewModel.setSelectedTab(it)
             }
         }
     ) { paddingValues ->
-        NavHost(navController = navController)
+        Crossfade(viewModel.selectedTab.value) { destination ->
+            when (destination) {
+                0 -> CategoriesScreen(navController = navController) //categories
+            }
+        }
     }
 }
