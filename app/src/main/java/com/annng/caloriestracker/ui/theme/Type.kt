@@ -122,13 +122,13 @@ val LightTypography = Typography(
     ),
     body1 = TextStyle(
         fontFamily = UbuntuFontFamily,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Medium,
         color = Grey400,
         fontSize = 17.sp
     ),
     body2 = TextStyle(
         fontFamily = UbuntuFontFamily,
-        fontWeight = FontWeight.Medium,
+        fontWeight = FontWeight.Normal,
         color = Grey400,
         fontSize = 16.sp
     ),

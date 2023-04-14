@@ -25,9 +25,20 @@ fun Navigation() {
         composable(route = Screen.Home.route) {
             HomeScreen(navController = navController)
         }
-        composable(route = Screen.Product.route) {
-            ProductScreen(navController)
+
+        //product list
+        composable(route = Screen.Product.routeWithArgument, arguments =
+        listOf(navArgument(Screen.Product.argument0){
+            type = NavType.StringType
+        })
+        ) { backStackEntry ->
+            val productName =
+                backStackEntry.arguments?.getString(Screen.ProductDetail.argument0) ?: return@composable
+
+            ProductScreen(productName, navController)
         }
+
+        //product detail
         composable(route = Screen.ProductDetail.routeWithArgument, arguments = listOf(
             navArgument(Screen.ProductDetail.argument0){ type = NavType.StringType }
         )){ backStackEntry ->

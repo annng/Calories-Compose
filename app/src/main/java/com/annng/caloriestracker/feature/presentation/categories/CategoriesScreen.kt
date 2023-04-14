@@ -81,7 +81,7 @@ fun CategoriesScreen(
             ) {
                 items(viewModel.categoriesItems) {
                     CategoriesItem(item = it){
-                        navController.navigate(Screen.Product.route){
+                        navController.navigate("${Screen.Product.route}/${it.title}"){
 
                         }
                     }

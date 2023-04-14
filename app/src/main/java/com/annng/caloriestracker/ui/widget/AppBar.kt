@@ -34,7 +34,7 @@ actionButton : @Composable RowScope.() -> Unit) {
         modifier = Modifier.fillMaxWidth(),
         backgroundColor = White200,
         contentColor = White200,
-        elevation = 0.7.dp
+        elevation = 0.dp
     ) {
         Spacer(modifier = Modifier.width(8.dp))
         if (isBack) ActionButton(resImg = R.drawable.ic_back) {
