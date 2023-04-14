@@ -29,7 +29,7 @@ Calories Tracker is UI-Kit from [Calories Tracker Mobile](https://uikit.to/calor
 |   `-- usecase
 |-- feature                               # Directory for Screen / Page
 |   `-- presentation
-|       |-- categories
+|       |-- categories                    # screen / page directory (Screen, ViewModel, State)
 |       |   `-- component                 # Directory of piece of your screen / page component
 |       |-- home
 |       |   `-- component
