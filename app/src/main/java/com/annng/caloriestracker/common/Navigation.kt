@@ -2,7 +2,7 @@ package com.annng.caloriestracker.common
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -14,13 +14,18 @@ import com.annng.caloriestracker.feature.presentation.product.list.ProductScreen
 
 @ExperimentalFoundationApi
 @Composable
-fun Navigation() {
+fun Navigation(onOpenLogin : @Composable (NavController) -> Unit) {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = Screen.Home.route
+        startDestination = Screen.Login.route
     )
     {
+
+        //login
+        composable(route = Screen.Login.route){
+            onOpenLogin(navController)
+        }
         //home
         composable(route = Screen.Home.route) {
             HomeScreen(navController = navController)

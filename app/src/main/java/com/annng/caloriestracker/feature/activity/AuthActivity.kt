@@ -1,4 +1,4 @@
-package com.annng.caloriestracker
+package com.annng.caloriestracker.feature.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -7,17 +7,16 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.annng.caloriestracker.common.Navigation
+import com.annng.caloriestracker.common.AuthNavigation
+import com.annng.caloriestracker.feature.presentation.auth.component.GoogleSignInClient
 import com.annng.caloriestracker.ui.theme.CaloriesTrackerTheme
+import com.google.android.gms.auth.api.identity.Identity
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 @OptIn(ExperimentalFoundationApi::class)
-class MainActivity : ComponentActivity() {
+class AuthActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -27,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Navigation()
+//                    AuthNavigation()
                 }
             }
         }

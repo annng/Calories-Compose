@@ -22,7 +22,6 @@ fun HomeScreen(
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
     val navHostController = rememberNavController()
-
     systemUIBar()
     Scaffold(
         scaffoldState = scaffoldState,

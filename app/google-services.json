@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "172892196875",
+    "project_id": "calories-4e815",
+    "storage_bucket": "calories-4e815.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172892196875:android:e25bc30c71b113985cb70e",
+        "android_client_info": {
+          "package_name": "com.annng.caloriestracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172892196875-1hf5ihlsq88llobnke91l8snekjfs5au.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHmvVVp9S0O4mdgv3E72vF74_OpRyPbvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "172892196875-1hf5ihlsq88llobnke91l8snekjfs5au.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
